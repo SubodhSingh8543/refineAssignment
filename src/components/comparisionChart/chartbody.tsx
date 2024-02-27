@@ -1,6 +1,12 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { MetricPill } from "./MetricPill"
 import { DataItem } from "../../interfaces";
+import { IoIosArrowUp, IoIosArrowDown } from "react-icons/io";
+import CustomLineChart, { Year1Int, Year2Int } from "./CampChart";
+import ChartRange from "./ChartRange";
+import MetriPillLoading from "./SclateronComponents/MetricPillLoading";
+import ChartLoading from "./SclateronComponents/ChartLoading";
+import jsonchartData from "../../../chartData.json";
 
 let arr: DataItem[] = [
     {
@@ -32,16 +38,60 @@ let arr: DataItem[] = [
 export const ChartBody = () => {
     const [matFill, setMatFill] = useState<DataItem[]>(arr);
     const [active, setActive] = useState<number>(0);
+    const [loading, setLoading] = useState(true);
+    const [showChart, setShowChart] = useState(true);
+    const [firstYear, setFirstYear] = useState([]);
+    const [secondYear,setSecondYear] = useState([]);
+    const [years,setYears] = useState(["2023","2020"]);
+
+    const filtFirstYear = () => {
+        const data = jsonchartData.data.find((el,i) => el.year == years[0]);
+        const newData: any = data?.data.map((el,i) => {return  {"name1":el.year,"value1":el.value}})
+        setFirstYear(newData);
+    }
+
+    const filtSecondYear = () => {
+        const data = jsonchartData.data.find((el,i) => el.year == years[1]);
+        const newData: any = data?.data.map((el,i) => {return  {"name2":el.year,"value2":el.value}})
+        setSecondYear(newData);
+    }
+
+    useEffect(() => {
+        let id = setTimeout(() => {
+            setLoading(false);
+        }, 1000)
+        return () => clearTimeout(id);
+    }, []);
+
+    useEffect(() => {
+        filtFirstYear();
+        filtSecondYear();
+    },[years])
+
+    // console.log(firstYear,secondYear);
+    
 
     return (
         <>
-            <div className="border-[1px] border-[red] w-[100%] bg-[#FFFFFF] p-[10px]">
-                <div className="p-[5px] border-[1px] border-[yellow] flex justify-around">
-                    {matFill.map((el, i) => (
-                        <MetricPill index={i} MatData={el} active={active} setActive={setActive} />
-                    ))}
+            <div className="w-[100%] bg-[#FFFFFF] p-[10px] rounded-[10px] shadow-lg">
+                <div className="flex justify-between items-center">
+                    {loading && Array(4).fill(0).map((el, i) => {
+                        return <MetriPillLoading />
+                    })}
+                    {!loading && matFill.map((el, i) => <MetricPill index={i} MatData={el} active={active} setActive={setActive} />)}
+                    {showChart ? <IoIosArrowDown onClick={() => setShowChart(!showChart)} /> : <IoIosArrowUp onClick={() => setShowChart(!showChart)} />}
                 </div>
-                <div className="border-[1px] border-[red] h-[300px]">
+                {showChart && !loading &&
+                    <div className="h-[200px]">
+                        <CustomLineChart year1={firstYear} year2={secondYear} />
+                    </div>
+                }
+                {showChart && loading && <ChartLoading />}
+                <div className="w-[100%] h-[32px] pt-[5px] pb-[5px] flex justify-end items-center gap-[10px]">
+                    {showChart && !loading && <>
+                        <ChartRange main={true} date={"Oct 1, 2022 - Feb 21, 2024"} setYears={setYears} first={true} years={years} />
+                        <ChartRange main={false} date={"Oct 1, 2022 - Feb 21, 2024"} setYears={setYears} first={false} years={years} />
+                    </>}
 
                 </div>
             </div>
