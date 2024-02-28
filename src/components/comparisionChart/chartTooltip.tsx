@@ -23,6 +23,8 @@ const ChartTooltip = ({ payload, active }: any) => {
             </div>
         )
 
+    }else{
+     return  <div>jjdskn</div>
     }
 }
 

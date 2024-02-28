@@ -87,13 +87,13 @@ export const ChartBody = () => {
                     </div>
                 }
                 {showChart && loading && <ChartLoading />}
-                <div className="w-[100%] h-[32px] pt-[5px] pb-[5px] flex justify-end items-center gap-[10px]">
-                    {showChart && !loading && <>
+                {showChart && !loading &&   <div className="w-[100%] h-[32px] pt-[5px] pb-[5px] flex justify-end items-center gap-[10px]">
+                    <>
                         <ChartRange main={true} date={"Oct 1, 2022 - Feb 21, 2024"} setYears={setYears} first={true} years={years} />
                         <ChartRange main={false} date={"Oct 1, 2022 - Feb 21, 2024"} setYears={setYears} first={false} years={years} />
-                    </>}
+                    </>
 
-                </div>
+                </div>}
             </div>
         </>
     )
