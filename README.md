@@ -1,52 +1,34 @@
-<div align="center" style="margin: 30px;">
-
-![Cover Image](https://refine.ams3.cdn.digitaloceanspaces.com/blog/2023-09-06-daisy-ui-panel/daisyui.jpg "Cover Image")
-
-
-<br />
-<br />
-
-<div align="center">
-    <a href="https://refine.dev">Home Page</a> |
-    <a href="https://discord.gg/refine">Discord</a> |
-    <a href="https://refine.dev/examples/">Examples</a> | 
-    <a href="https://refine.dev/blog/">Blog</a> | 
-    <a href="https://refine.dev/docs/">Documentation</a>
-</div>
-</div>
-
-<br />
-
-<div align="center"><strong>Build your <a href="https://reactjs.org/">React</a>-based CRUD applications, without constraints.</strong><br>An open source, headless web application framework developed with flexibility in mind.
-
-<br />
-<br />
-
-[![Discord](https://img.shields.io/discord/837692625737613362.svg?label=&logo=discord&logoColor=ffffff&color=7389D8&labelColor=6A7EC2)](https://discord.gg/refine)
-[![Twitter Follow](https://img.shields.io/twitter/follow/refine_dev?style=social)](https://twitter.com/refine_dev)
-
-<a href="https://www.producthunt.com/posts/refine-3?utm_source=badge-top-post-badge&utm_medium=badge&utm_souce=badge-refine&#0045;3" target="_blank"><img src="https://api.producthunt.com/widgets/embed-image/v1/top-post-badge.svg?post_id=362220&theme=light&period=daily" alt="refine - 100&#0037;&#0032;open&#0032;source&#0032;React&#0032;framework&#0032;to&#0032;build&#0032;web&#0032;apps&#0032;3x&#0032;faster | Product Hunt" style="width: 250px; height: 54px;" width="250" height="54" /></a>
-
-</div>
-
+## Refine Assignment
 
 ## About
 
-This example provides a great starting point to learn how to build a full-fledged admin panel by integrating [**daisyUI**](https://daisyui.com) with [**refine**](https://github.com/refinedev/refine)
+Our Admin Panel Application incorporates the following key components:
 
-**daisyUI** is a TailwinCSS based component templates library. It provides shorter, semantic class names composed from regular TailwindCSS classes that also come with responsive, color, size and shape variants. As such, daisyUI offers the convenience of using friendly class names to style markups while beautifying React code. On top of these, daisyUI classes can be overridden and extented. Besides, it lets us use regular TailwindCSS classes as well. In this example, you'll discover how to use daisyUI templates to style React components.
+- **daisyUI**: An essential component in our project, daisyUI is a TailwindCSS-based library that streamlines the styling of React components. It provides an extensive range of semantic class names derived from regular TailwindCSS classes, making styling more intuitive and efficient. With daisyUI, we've been able to enhance the visual appeal of our application while maintaining clean, readable code.
 
-refine is a React-based powerful framework for building low-code applications. It is primarily focused on implementing data-heavy apps such as internal tools, dashboards, admin panels, and storefronts. It comes with a core package that segregates app concerns like data handling, authentication, access control, etc., into React contexts. It also supports integration with industry standard backend systems such and UI frameworks. It is highly customizable and extensible. In this example, you get an opportunity to learn how to integrate **daisyUI** with **refine** for building an admin panel app.
+- **refine**: At the core of our application lies refine, a powerful React framework tailored for building low-code applications. refine simplifies complex tasks such as data management, authentication, and access control, allowing us to focus on delivering functionality without getting bogged down in implementation details. Its seamless integration with backend systems and UI frameworks has been instrumental in the development of our admin panel.
 
-Refer to the complete tutorial of this app [here.](https://refine.dev/blog/daisy-ui-react-admin-panel/)
+## Chart Functionality
+
+One of the primary features of our Admin Panel Application is its robust chart functionality. We've implemented a functional line chart module that enables users to compare annual data with previous years effortlessly. Key highlights of our chart functionality include:
+
+- **Modularity**: We've adopted a modular, component-based structure for our chart module, making it easy to understand, maintain, and extend. Each component is designed with reusability and scalability in mind, allowing for seamless integration into various parts of our application.
+
+- **Tailwind CSS Styling**: Leveraging the power of Tailwind CSS, we've applied sleek and visually appealing styles to our charts, ensuring a cohesive and professional look across the entire application. Tailwind CSS's utility-first approach has enabled us to customize every aspect of our charts with ease, from colors and fonts to sizing and spacing.
+
+### Preview of application
+<img width="1321" alt="Screenshot 2024-02-28 at 2 30 49 PM" src="https://github.com/SubodhSingh8543/refineAssignment/assets/112638063/2a0633d5-739f-4a42-96ec-869bebb31feb">
+
+<img width="1222" alt="Screenshot 2024-02-28 at 1 25 18 PM" src="https://github.com/SubodhSingh8543/refineAssignment/assets/112638063/cb6199be-d1c9-4736-9b95-58120351226b">
+<img width="1223" alt="Screenshot 2024-02-28 at 1 25 40 PM" src="https://github.com/SubodhSingh8543/refineAssignment/assets/112638063/f9207451-e46c-499e-b33c-d017e09a0097">
 
 ## Quick Start
 
-Run the following command to download the project:
-
-```
-npm create refine-app@latest -- --example blog-refine-daisyui
-```
+Clone the repository:
+ ### Run the following commands
+  ```
+   npm i
+  ```
 
 Once the setup is complete, navigate to the project folder and start your project with:
 
@@ -55,15 +37,3 @@ npm run dev
 ```
 
 Your application will be accessible at http://localhost:5173
-
-![Dashboard Page](https://refine.ams3.cdn.digitaloceanspaces.com/blog/2023-09-06-daisy-ui-panel/dash-1.png "Dashboard Page")
-
-![Product List Page](https://refine.ams3.cdn.digitaloceanspaces.com/blog/2023-09-06-daisy-ui-panel/dash-2.png "Product List Page")
-
-![Product Edit Page](https://refine.ams3.cdn.digitaloceanspaces.com/blog/2023-09-06-daisy-ui-panel/dash-3.png "Product Edit Page")
-
-### Resources
-
-Refer to [daisyUI docs](https://daisyui.com/docs/install/) for more information.
-
-Refer to complete CRUD app [tutorial](https://refine.dev/docs/tutorial/introduction/index/) to learn more about refine.
